@@ -1,0 +1,58 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@page import="util.StringUtil"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.Calendar"%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<head>
+<title>Top</title>
+
+<link href='<%=StringUtil.CONTEXTPATH + StringUtil.LOGINCSS%>' rel='stylesheet' type='text/css' />
+<script type="text/javascript" src="<%=StringUtil.MAINJS%>"></script>
+<meta charset="<%=StringUtil.SET_ENCODING%>" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+</head>
+
+<body>
+	<div class="container">
+		<div id="login-form">
+			<div id="box">
+
+				<form action="" method="post">
+
+          <!-- menu.jsp���Q�l�ɓ��͒l��\������ -->
+					<div></div>
+
+          <%-- �^�C�g�� --%>
+          <% out.println("<input type="hidden" name="bookTitle" value="" + request.getAttribute() + "">");%>
+
+          <%-- ���� --%>
+          <% out.println("<input type="hidden" name="author" value="" + request.getAttribute() + "">");%>
+
+          <%-- �o�Ŏ� --%>
+          <% out.println("<input type="hidden" name="publisher" value="" + request.getAttribute() + "">");%>
+
+          <%-- �o�ŔN --%>
+          <% out.println("<input type="hidden" name="publishday" value="" + request.getAttribute() + "">");%>
+
+          <%-- ���O�C�����[�U�[�� --%>
+          <%  out.println("<input type="hidden" name="publishday" value="" + session.getAttribute() + "">");%>
+
+          <%-- �o�^�N���� --%>
+          <% out.println("<input type="hidden" name="registday" value="" + sdf.format(cal.getTime()) + "">");%>
+
+					<div class="btn">
+						<input type="submit" name="submit" value="Regist" />
+					</div>
+
+
+				</form>
+
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

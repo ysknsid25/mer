@@ -1,0 +1,51 @@
+package action;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import tool.Action;
+import tool.Verify;
+import util.StringQuery;
+import util.StringUtil;
+
+
+public class RegistCheckAction extends Action{
+
+	/**
+	 *
+	 * 検証用クラスのインスタンス化
+	 *
+	 */
+	Verify vr = new Verify();
+
+	public String execute(
+			HttpServletRequest request, HttpServletResponse response) throws Exception{
+
+		HttpSession session=request.getSession();
+
+		String booktitle = request.getParameter(StringQuery.BOOKTITLE);
+		String author = request.getParameter(StringQuery.AUTHOR);
+		String publisher = request.getParameter(StringQuery.PUBLISHER);
+		String publishday = request.getParameter(StringQuery.PUBLISHDAY);
+
+		if(vr.booktitleVerify(booktitle)==StringUtil.MOJHI_OK && vr.authorVerify(author)==StringUtil.MOJHI_OK
+				&& vr.publishedYearVerify(publishday)==StringUtil.MOJHI_OK){
+
+			request.setAttribute(StringQuery.BOOKTITLE, booktitle);
+			request.setAttribute(StringQuery.AUTHOR, author);
+			request.setAttribute(StringQuery.PUBLISHER, publisher);
+			request.setAttribute(StringQuery.PUBLISHDAY, publishday);
+
+		return StringUtil.VIEW_FOLDER + StringUtil.SLASH + StringUtil.PAGE_REGIST_CHECK
+				+ StringUtil.DOT + StringUtil.JSP_EXTENSION;
+
+		}else{
+
+			return "";
+
+		}
+
+	}
+
+}

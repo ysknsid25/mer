@@ -1,0 +1,69 @@
+package action;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import bean.Menber;
+import dao.MenberDAO;
+import tool.Action;
+import tool.Verify;
+import util.StringQuery;
+import util.StringUtil;
+
+public class LoginAction  extends Action{
+
+	/**
+	 *
+	 * 検証用クラスのインスタンス化
+	 *
+	 */
+	Verify vr = new Verify();
+
+	public String execute(
+			HttpServletRequest request, HttpServletResponse response) throws Exception{
+
+		HttpSession session=request.getSession();
+
+		String userId = request.getParameter(StringQuery.USERID);
+		String password = request.getParameter(StringQuery.PASS);
+
+		if(vr.useidVerify(userId,request,response)==StringUtil.MOJHI_OK
+				&& vr.passwordVeryfy(userId,request,response)==StringUtil.MOJHI_OK){
+
+
+		MenberDAO dao = new MenberDAO();
+		Menber menber = dao.search(userId,password);
+
+
+		try{
+
+			if(menber.getUserId() != null){
+
+				session.setAttribute(StringQuery.USERNAME, menber.getUserName());
+
+			}
+		}catch(NullPointerException nulpo){
+
+			//ログイン画面へエラーメッセージとともにリダイレクトさせる処理を記述する
+			request.setAttribute("loginnull",StringUtil.MOJHI_NULL);
+			return StringUtil.VIEW_FOLDER + StringUtil.SLASH;
+
+		}
+
+		// view/menu.jsp;
+		return StringUtil.VIEW_FOLDER + StringUtil.SLASH + StringUtil.PAGE_MENU + StringUtil.DOT + StringUtil.JSP_EXTENSION;
+
+	}else{
+
+		return StringUtil.VIEW_FOLDER + StringUtil.SLASH;
+
+	}
+
+
+	}
+
+}
+
+
+
