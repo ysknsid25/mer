@@ -10,6 +10,8 @@
 <fullyQualifiedTypeName name="util.StringUtil"/>
 <fullyQualifiedTypeName name="tool.Verify"/>
 <fullyQualifiedTypeName name="java.util.Date"/>
-<fullyQualifiedTypeName name="util.StringQuery"/>
 <fullyQualifiedTypeName name="java.util.Calendar"/>
+<fullyQualifiedTypeName name="java.io.PrintWriter"/>
+<fullyQualifiedTypeName name="java.lang.NullPointerException"/>
+<fullyQualifiedTypeName name="util.StringQuery"/>
 </qualifiedTypeNameHistroy>

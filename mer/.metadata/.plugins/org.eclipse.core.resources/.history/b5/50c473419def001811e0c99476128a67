@@ -1,0 +1,22 @@
+package dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+public class BookDAO extends DAO{
+	
+	public void regist(String booktitle, String author, String publisher, String publishday,
+			String runame, String registday) throws Exception {
+		
+		Connection con = getConnection();
+
+		PreparedStatement st;
+		
+		st = con.prepareStatement(
+				"insert into BOOK values (seq_bookId.nextval,?,?,?,?,?,"
+				+ "?,?,?,?)");
+		
+		
+	}
+
+}

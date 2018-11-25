@@ -1,0 +1,168 @@
+package util;
+
+/**
+ *
+ *
+ * @author yskn_sid25
+ *
+ * このクラスにはクエリ用の文字列を記述します。
+ * テーブルごとに列名とテーブル名を記述してください。
+ *
+ */
+
+public class StringQuery {
+
+	/**
+	 *
+	 * 句
+	 *
+	 */
+
+	//Select句
+	public static final String SELECT_SIGNAL = "SELECT ";
+
+	//insert into句
+	public static final String INSERT_SIGNAL = "INSERT INTO ";
+
+	//values句
+	public static final String VALUES_SIGNAL = "VALUES ";
+
+	//update句
+	public static final String UPDATE_SIGNAL = "UPDATE ";
+
+	//set句
+	public static final String SET_SIGNAL = "SET ";
+
+	//delete句
+	public static final String DELETE_SIGANL = "DELETE ";
+
+	//From句
+	public static final String FROM_SIGNAL = "FROM ";
+
+	//Wehre句
+	public static final String WHERE_SIGNAL = "WHERE ";
+
+	//order by句
+	public static final String ORDERBY_SIGNAL = "ORDER BY ";
+
+	//ASC
+	public static final String ASC = "ASC";
+
+	//DESC
+	public static final String DESC = "DESC";
+
+	//カンマ
+	public static final String CANMA = ", ";
+
+	// *
+	public static final String KOME = "* ";
+
+	// =
+	public static final String EQUAL = "= ";
+
+	// ""
+	public static final String EMPTY = "";
+
+	// スペース
+	public static final String SPACE = " ";
+
+	//プレースホルダ―
+	public static final String HATENA = "? ";
+
+	//左括弧
+	public static final String LEFT_KAKKO = "( ";
+
+	//右括弧
+	public static final String RIGHT_KAKKO = " ) ";
+
+	//AND
+	public static final String AND = "AND ";
+
+	//OR
+	public static final String OR = "OR ";
+
+	//IN
+	public static final String IN = "in ";
+	
+	//Flag_off
+	public static final int FLAG_OFF = 0;
+	
+	//Flag_on
+	public static final int FLAG_ON = 1;
+
+
+//---------------------------------------------------------------------------------------------------------------------------------------//
+
+
+
+	/**
+	 * ☆menberテーブル☆
+	 *
+	 * ログインユーザーの情報を管理します
+	 *
+	 * N = 変更不可
+	 * Y = 変更可能
+	 *
+	 * @param menber ... テーブル名
+	 *
+	 * @param usernum ... 管理番号 N
+	 * @param userid ... ログインID Y
+	 * @param password ... パスワード Y
+	 * @param username ... ユーザー名 Y
+	 *
+	 */
+
+	public static final String MENBER = "menber";
+
+	public static final String USERNUM = "usernum";
+
+	public static final String USERID = "userid";
+
+	public static final String PASS = "password";
+
+	public static final String USERNAME = "username";
+
+
+
+//---------------------------------------------------------------------------------------------------------------------------------------//
+
+	/**
+
+	☆Bookテーブル☆
+
+	@param bookid 本のID　…　シークエンスで管理する　N
+	@param booktitle 本のタイトル N
+	@param author 本の著者 N
+	@param publisher 出版社 Y
+	@param publishday 出版年月日 Y
+	@param runame 登録したユーザーの名前 N
+	@param registday 登録年月日　N
+	@param buname 借りているユーザーの名前 N
+	@param returnday 返却予定日 貸出日をDateクラスで取得し、そこから10日以内　N
+	@param returnFlg 貸出中フラグ
+
+	**/
+
+	public static final String BOOKID = "bookid";
+
+	public static final String BOOKTITLE = "booktitle";
+
+	public static final String AUTHOR = "author";
+
+	public static final String PUBLISHER = "publisher";
+
+	public static final String PUBLISHDAY = "publishday";
+
+	public static final String RUNAME = "runame";
+
+	public static final String REGISTDAY = "registday";
+
+	public static final String BUNAME = "buname";
+
+	public static final String RETURNDAY ="returnday";
+
+	public static final String RETURNFLG = "returnFlg";
+
+
+
+}

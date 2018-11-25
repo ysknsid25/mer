@@ -83,6 +83,12 @@ public class StringQuery {
 
 	//IN
 	public static final String IN = "in ";
+	
+	//Flag_off
+	public static final int FLAG_OFF = 0;
+	
+	//Flag_on
+	public static final int FLAG_ON = 1;
 
 
 //---------------------------------------------------------------------------------------------------------------------------------------//
@@ -156,6 +162,21 @@ public class StringQuery {
 	public static final String RETURNDAY ="returnday";
 
 	public static final String RETURNFLG = "returnFlg";
+	
+	/**
+	 * 
+	 * エラーチェック用変数名
+	 * 
+	 */
+	
+	//タイトル
+	public static final String BOOKTITLE_CK = "booktitle_ck";
+	
+	//著者
+	public static final String AUTHOR_CK = "author_ck";
+	
+	//出版年
+	public static final String PUBLISHDAY_CK = "publishday_ck";
 
 
 

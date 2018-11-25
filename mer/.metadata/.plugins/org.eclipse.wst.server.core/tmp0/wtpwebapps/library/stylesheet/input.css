@@ -5,6 +5,13 @@ html, body, .container {
   height: 100%;
 }
 
+#error_message{
+
+	color: red;
+	font-size: 15px
+
+}
+
 .container,
 .overlay:before{
   align-items: center;

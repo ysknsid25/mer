@@ -28,64 +28,110 @@
 
 					<div>
 						<label for="form-userid">BoolTitle</label> <input type="text"
-							name="booktitle" id="form-userid" placeholder="BookTitle" />
+							name="booktitle" id="form-userid" placeholder="BookTitle"
+							value="<%if (request.getAttribute(StringQuery.BOOKTITLE) != null)
+				out.println(request.getAttribute(StringQuery.BOOKTITLE));%>" />
 						<p class="note">Please enter BookTitle.</p>
 					</div>
+					<div>
+						<%
+							if (request.getAttribute(StringQuery.BOOKTITLE_CK) != null) {
+								if ((int) request.getAttribute(StringQuery.BOOKTITLE_CK) == StringUtil.BOOKTITLE_NULL) {
 
-					<div><%--out.println("<p id=" + "error_message" + ">" + errorMessage(booktitleVerify) + "</p>");--%></div>
+									out.println("<p id=" + "error_message" + ">" + StringUtil.BOOKTITLE_IS_NULL + "</p>");
+
+								} else if ((int) request.getAttribute(StringQuery.BOOKTITLE_CK) == StringUtil.BOOKTITLE_LENGTH) {
+
+									out.println("<p id=" + "error_message" + ">" + StringUtil.BOOKTITLE_OVER_LENGTH + "</p>");
+
+								}
+							}
+						%>
+					</div>
+
 
 					<div>
 						<label for="form-userid">Author</label> <input type="text"
-							name="author" id="form-userid" placeholder="author" />
+							name="author" id="form-userid" placeholder="author"
+							value="<%if (request.getAttribute(StringQuery.AUTHOR) != null)
+				out.println(request.getAttribute(StringQuery.AUTHOR));%>" />
 						<p class="note">Please enter author.</p>
 					</div>
-					<div></div>
+					<div>
+						<%
+							if (request.getAttribute(StringQuery.AUTHOR_CK) != null) {
+								if ((int) request.getAttribute(StringQuery.AUTHOR_CK) == StringUtil.AUTHOR_NULL) {
+
+									out.println("<p id=" + "error_message" + ">" + StringUtil.AUTHOR_IS_NULL + "</p>");
+
+								}
+							}
+						%>
+					</div>
 
 					<div>
 						<label for="form-userid">Publisher</label> <input type="text"
-							name="publisher" id="form-userid" placeholder="publisher" />
+							name="publisher" id="form-userid" placeholder="publisher"
+							value="<%if (request.getAttribute(StringQuery.PUBLISHER) != null)
+				out.println(request.getAttribute(StringQuery.PUBLISHER));%>" />
 						<p class="note">Please enter Publisher.</p>
 					</div>
 
 
 					<div>
 						<label for="form-userid">PublishDay</label> <input type="text"
-							name="publishday" id="form-userid" placeholder="published Year" />
+							name="publishday" id="form-userid" placeholder="published Year"
+							value="<%if (request.getAttribute(StringQuery.PUBLISHDAY) != null)
+				out.println(request.getAttribute(StringQuery.PUBLISHDAY));%>" />
 						<p class="note">Please enter published Year.</p>
 					</div>
-					<div></div>
+					<div>
+						<%
+							if (request.getAttribute(StringQuery.PUBLISHDAY_CK) != null) {
+								if ((int) request.getAttribute(StringQuery.PUBLISHDAY_CK) == StringUtil.YEAR_OVER) {
+
+									out.println("<p id=" + "error_message" + ">" + StringUtil.PUBLISHYEAR_FUTURE + "</p>");
+
+								} else if ((int) request.getAttribute(StringQuery.PUBLISHDAY_CK) == StringUtil.NOT_NUMBER) {
+
+									out.println("<p id=" + "error_message" + ">" + StringUtil.PUBLISHYEAR_INVALIDATE + "</p>");
+
+								}
+							}
+						%>
+					</div>
 
 					<input type="submit" name="submit" value="Regist" />
 
 
 
-					<%! private String errorMessage(int checkNum){
+					<%--String errorMessage(int checkNum){
 
-						if(checkNum == StringUtil.BOOKTITLE_NULL){
+		if (checkNum == StringUtil.BOOKTITLE_NULL) {
 
-							return StringUtil.BOOKTITLE_IS_NULL;
+			return StringUtil.BOOKTITLE_IS_NULL;
 
-						}else if(checkNum == StringUtil.BOOKTITLE_LENGTH){
+		} else if (checkNum == StringUtil.BOOKTITLE_LENGTH) {
 
-							return StringUtil.BOOKTITLE_OVER_LENGTH;
+			return StringUtil.BOOKTITLE_OVER_LENGTH;
 
-						}else if(checkNum == StringUtil.AUTHOR_NULL){
+		} else if (checkNum == StringUtil.AUTHOR_NULL) {
 
-							return StringUtil.AUTHOR_IS_NULL;
+			return StringUtil.AUTHOR_IS_NULL;
 
-						}else if(checkNum == StringUtil.YEAR_OVER){
+		} else if (checkNum == StringUtil.YEAR_OVER) {
 
-							return StringUtil.PUBLISHYEAR_FUTURE;
+			return StringUtil.PUBLISHYEAR_FUTURE;
 
-						}else if(checkNum == StringUtil.NOT_NUMBER){
+		} else if (checkNum == StringUtil.NOT_NUMBER) {
 
-							return StringUtil.PUBLISHYEAR_INVALIDATE;
+			return StringUtil.PUBLISHYEAR_INVALIDATE;
 
-						}
+		}
 
-					return "";
+		return "";
 
-					}%>
+	}--%>
 
 
 

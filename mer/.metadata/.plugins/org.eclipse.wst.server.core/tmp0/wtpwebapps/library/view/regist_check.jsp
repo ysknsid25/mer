@@ -12,7 +12,7 @@
 
 <link href='<%=StringUtil.CONTEXTPATH + StringUtil.INPUTCSS%>' rel='stylesheet' type='text/css' />
 <script type="text/javascript" src="<%=StringUtil.MAINJS%>"></script>
-<meta charset="<%=StringUtil.SET_ENCODING%>" />
+<meta charset="<%=StringUtil.SET_ENCODING %>" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 </head>
@@ -22,12 +22,17 @@
 		<div id="login-form">
 			<div id="box">
 
-				<form action="" method="post">
+				<form action="<%=StringUtil.REGISTCOMPLETE + StringUtil.CONTROLLER %>" method="post">
 
-          <div>BookTitle:<%=request.getAttribute(StringQuery.BOOKTITLE) %></div>
-          <div>Author:<%=request.getAttribute(StringQuery.AUTHOR)  %></div>
-          <div>Publisher:<%=request.getAttribute(StringQuery.PUBLISHER)  %></div>
-          <div>Publishday:<%=request.getAttribute(StringQuery.PUBLISHDAY)  %></div>
+          <div>BookTitle:<%=request.getAttribute(StringQuery.BOOKTITLE)%></div>
+          <div>Author:<%=request.getAttribute(StringQuery.AUTHOR)%></div>
+          <div>Publisher:<%=request.getAttribute(StringQuery.PUBLISHER)%></div>
+          <div>Publishday:<%=request.getAttribute(StringQuery.PUBLISHDAY)%></div>
+          
+          <input type="hidden" name="booktitle" value="<%=request.getAttribute(StringQuery.BOOKTITLE)%>"/>
+          <input type="hidden" name="author" value="<%=request.getAttribute(StringQuery.AUTHOR)%>"/>
+          <input type="hidden" name="publisher" value="<%=request.getAttribute(StringQuery.PUBLISHER)%>"/>
+          <input type="hidden" name="publishday" value="<%=request.getAttribute(StringQuery.PUBLISHDAY)%>"/>
           <input type="hidden" name="runame" value="<%=session.getAttribute(StringQuery.USERNAME) %>"/>
           <input type="hidden" name="registday" value="<%=cal.get(Calendar.YEAR)
           + "-" + (cal.get(Calendar.MONTH) + 1) + "-" + cal.get(Calendar.DAY_OF_MONTH)%>"/>

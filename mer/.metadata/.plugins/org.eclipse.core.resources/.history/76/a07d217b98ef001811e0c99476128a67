@@ -1,0 +1,47 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@page import="util.StringUtil"%>
+<%@page import="util.StringQuery"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.Calendar"%>
+<% Calendar cal = Calendar.getInstance();%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<head>
+<title>Top</title>
+
+<link href='<%=StringUtil.CONTEXTPATH + StringUtil.INPUTCSS%>' rel='stylesheet' type='text/css' />
+<script type="text/javascript" src="<%=StringUtil.MAINJS%>"></script>
+<meta charset="<%=StringUtil.SET_ENCODING %>" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+</head>
+
+<body>
+	<div class="container">
+		<div id="login-form">
+			<div id="box">
+
+				<form action="<%=StringUtil.REGISTCOMPLETE + StringUtil.CONTROLLER %>" method="post">
+
+          <div>BookTitle:<%=request.getAttribute(StringQuery.BOOKTITLE) %></div>
+          <div>Author:<%=request.getAttribute(StringQuery.AUTHOR)  %></div>
+          <div>Publisher:<%=request.getAttribute(StringQuery.PUBLISHER)  %></div>
+          <div>Publishday:<%=request.getAttribute(StringQuery.PUBLISHDAY)  %></div>
+          <input type="hidden" name="runame" value="<%=session.getAttribute(StringQuery.USERNAME) %>"/>
+          <input type="hidden" name="registday" value="<%=cal.get(Calendar.YEAR)
+          + "-" + (cal.get(Calendar.MONTH) + 1) + "-" + cal.get(Calendar.DAY_OF_MONTH)%>"/>
+
+					<div class="btn">
+						<input type="submit" name="submit" value="Regist" />
+					</div>
+
+
+				</form>
+
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
