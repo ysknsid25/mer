@@ -163,6 +163,8 @@ public class StringQuery {
 
 	public static final String RETURNFLG = "returnFlg";
 	
+	public static final String CATEGORY = "category";
+	
 	/**
 	 * 
 	 * エラーチェック用変数名

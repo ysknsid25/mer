@@ -49,6 +49,7 @@
 						%>
 					</div>
 
+					
 
 					<div>
 						<label for="form-userid">Author</label> <input type="text"
@@ -100,6 +101,20 @@
 							}
 						%>
 					</div>
+					
+					<div>
+						<span>Category:</span><select name=”category”>
+							<option value=”7” selected></option>
+							<option value=”1”>漫画</option>
+							<option value=”2”>文庫</option>
+							<option value=”3”>大型本</option>
+							<option value=”4”>雑誌</option>
+							<option value=”5”>参考書</option>
+							<option value=”6”>新書</option>
+						</select>
+					</div>
+					
+					<br/>
 
 					<input type="submit" name="submit" value="Regist" />
 

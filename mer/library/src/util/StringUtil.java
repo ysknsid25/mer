@@ -137,7 +137,12 @@ public class StringUtil {
 
 	//input.cssリンク
 	public static final String INPUTCSS = "/stylesheet/input.css";
-
+	
+	//searchAll.cssリンク
+	public static final String SEARCHALLCSS = "/stylesheet/searchAll.css";
+	
+	//searchAll.js
+	public static final String SEARCHALLJS = "/stylesheet/searchAll.js";
 
 	//main.jsリンク
 	public static final String MAINJS = "../stylesheet/main.js";

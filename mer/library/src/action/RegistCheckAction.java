@@ -28,6 +28,7 @@ public class RegistCheckAction extends Action{
 		String author = request.getParameter(StringQuery.AUTHOR);
 		String publisher = request.getParameter(StringQuery.PUBLISHER);
 		String publishday = request.getParameter(StringQuery.PUBLISHDAY);
+		String category = request.getParameter(StringQuery.CATEGORY);
 
 		int btcheck = vr.booktitleVerify(booktitle);
 		int aucheck = vr.authorVerify(author);
@@ -36,14 +37,14 @@ public class RegistCheckAction extends Action{
 		if(btcheck==StringUtil.MOJHI_OK && aucheck==StringUtil.MOJHI_OK
 				&& yearcheck==StringUtil.MOJHI_OK){
 
-			setBookInformation(booktitle,author,publisher,publishday,request);
+			setBookInformation(booktitle,author,publisher,publishday,category,request);
 
 			return StringUtil.VIEW_FOLDER + StringUtil.SLASH + StringUtil.PAGE_REGIST_CHECK
 					+ StringUtil.DOT + StringUtil.JSP_EXTENSION;
 
 		}else{
 
-			setBookInformation(booktitle,author,publisher,publishday,request);
+			setBookInformation(booktitle,author,publisher,publishday,category,request);
 
 			request.setAttribute(StringQuery.BOOKTITLE_CK, btcheck);
 			request.setAttribute(StringQuery.AUTHOR_CK, aucheck);
@@ -60,12 +61,13 @@ public class RegistCheckAction extends Action{
 
 
 	private void setBookInformation(String booktitle, String author, String publisher, String publishday
-			,HttpServletRequest request) {
+			,String category,HttpServletRequest request) {
 
 		request.setAttribute(StringQuery.BOOKTITLE, booktitle);
 		request.setAttribute(StringQuery.AUTHOR, author);
 		request.setAttribute(StringQuery.PUBLISHER, publisher);
-		request.setAttribute(StringQuery.PUBLISHDAY, publishday);		
+		request.setAttribute(StringQuery.PUBLISHDAY, publishday);
+		request.setAttribute(StringQuery.CATEGORY, category);
 
 	}
 

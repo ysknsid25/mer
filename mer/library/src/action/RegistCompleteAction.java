@@ -25,9 +25,10 @@ public class RegistCompleteAction extends Action{
 			String publishday = request.getParameter(StringQuery.PUBLISHDAY);
 			String runame = request.getParameter(StringQuery.RUNAME);
 			String registday = request.getParameter(StringQuery.REGISTDAY);
+			int category = Integer.parseInt(request.getParameter(StringQuery.CATEGORY));
 
 			BookDAO dao = new BookDAO();
-			dao.regist(booktitle,author,publisher,publishday,runame,registday);
+			dao.regist(booktitle,author,publisher,publishday,runame,registday,category);
 
 			return StringUtil.VIEW_FOLDER + StringUtil.SLASH + StringUtil.PAGE_REGIST_COMPLETE
 					+ StringUtil.DOT + StringUtil.JSP_EXTENSION;

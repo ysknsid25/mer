@@ -1,0 +1,13 @@
+/**
+ * 全件検索画面のJavaScriptです。
+ * カードスタイルの動きをホバーさせます。
+ */
+
+$(window).load(function() {
+  $('.post-module').hover(function() {
+    $(this).find('.description').stop().animate({
+      height: "toggle",
+      opacity: "toggle"
+    }, 300);
+  });
+});

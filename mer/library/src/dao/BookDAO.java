@@ -8,7 +8,7 @@ import util.StringQuery;
 public class BookDAO extends DAO{
 
 	public void regist(String booktitle, String author, String publisher, String publishday,
-			String runame, String registday) throws Exception {
+			String runame, String registday,int category) throws Exception {
 
 		Connection con = getConnection();
 
@@ -16,7 +16,7 @@ public class BookDAO extends DAO{
 
 		st = con.prepareStatement(
 				"insert into BOOK values (seq_bookId.nextval,?,?,?,?,?,"
-						+ "?,?,?,?)");
+						+ "?,?,?,?,?)");
 
 		st.setString(1, booktitle);
 		st.setString(2, author);
@@ -27,6 +27,7 @@ public class BookDAO extends DAO{
 		st.setString(7, StringQuery.EMPTY);
 		st.setString(8, StringQuery.EMPTY);
 		st.setInt(9, StringQuery.FLAG_OFF);
+		st.setInt(10, category);
 
 		try {
 

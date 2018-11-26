@@ -14,6 +14,7 @@ public class Book  implements java.io.Serializable{
 	private String buname;
 	private Date returnDay;
 	private int returnFlg;
+	private int category;
 
 
 	public int getBookId() {
@@ -113,6 +114,16 @@ public class Book  implements java.io.Serializable{
 
 	public void setReturnFlg(int returnFlg) {
 		this.returnFlg = returnFlg;
+	}
+
+
+	public int getCategory() {
+		return category;
+	}
+
+
+	public void setCategory(int category) {
+		this.category = category;
 	}
 
 
